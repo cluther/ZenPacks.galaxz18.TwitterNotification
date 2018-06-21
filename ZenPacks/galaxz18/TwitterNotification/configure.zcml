@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope">
+
+    <!-- Code that executes the notification action. -->
+    <utility
+        factory=".actions.TwitterAction"
+        provides="Products.ZenModel.interfaces.IAction"
+        name="twitter"
+        />
+
+    <!-- Code that defines configuration options for notification action. -->
+    <adapter
+        for="Products.ZenModel.NotificationSubscription.NotificationSubscription"
+        provides=".actions.ITwitterActionContentInfo"
+        factory=".actions.TwitterActionContentInfo"
+        />
+
+</configure>
